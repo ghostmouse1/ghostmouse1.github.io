@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java, Ghost">
-    <meta name="description" content="java[]: https://docs.oracle.com/javase/9/docs/api/overview-summary.html    “JAVADOC”
-驼峰命名法：驼峰式命名法就是当变量名或函式名是由一个或多个单词连结在一">
+    <meta name="keywords" content="SERVLET, Ghost">
+    <meta name="description" content="SERVLET一．什么是 Servlet.Servlet 是 JavaWeb 的三大组件之一,它属于动态资源。Servlet 的作用处理请求，服务器会把接收到的请求交给 Servlet 来处理。
+二、在 Servlet 中通常需要:1.接收">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
 
     
 
-    <title>java | Ghost</title>
+    <title>SERVLET | Ghost</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java</h1>
+                    <h1 class="description center-align post-title">SERVLET</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-05
+                    2022-06-06
                 </div>
                 
 
@@ -464,182 +464,165 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><p>[]: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/9/docs/api/overview-summary.html">https://docs.oracle.com/javase/9/docs/api/overview-summary.html</a>    “JAVADOC”</p>
-<h2 id="驼峰命名法："><a href="#驼峰命名法：" class="headerlink" title="驼峰命名法："></a>驼峰命名法：</h2><p>驼峰式命名法就是当变量名或函式名是由一个或多个单词连结在一起，而构成的唯一识别字时，第一个单词以小写字母开始；第二个单词的首字母大写或每一个单词的首字母都采用大写字母，例如：myFirstName、myLastName，这样的变量名看上去就像驼峰峰一样此起彼伏，故得名。<br>驼峰式命名法的命名规则可视为一种惯例，并无绝对与强制，为的是增加识别和可读性。</p>
-<h3 id="小驼峰法"><a href="#小驼峰法" class="headerlink" title="小驼峰法"></a>小驼峰法</h3><p>变量一般用小驼峰法标识。驼峰法的意思是：除第一个单词之外，其他单词首字母大写。譬如<br>int myStudentCount;<br>变量myStudentCount第一个单词是全部小写，后面的单词首字母大写。</p>
-<h3 id="大驼峰法"><a href="#大驼峰法" class="headerlink" title="大驼峰法"></a>大驼峰法</h3><p>相比小驼峰法，大驼峰法把第一个单词的首字母也大写了。常用于类名，函数名，属性，命名空间。譬如<br>public class DataBaseUser;</p>
-<h3 id="1-关于static"><a href="#1-关于static" class="headerlink" title="1.关于static"></a>1.关于static</h3><p>使用static关键字即将变量/方法定义为公共。在类不被实体化时就可以使用。static方法只允许调用static属性或static方法。而非static方法可以调用static方法或属性。</p>
-<p>static代码块优先执行（包括主函数）</p>
-<h3 id="2-Annotation注解"><a href="#2-Annotation注解" class="headerlink" title="2.Annotation注解"></a>2.Annotation注解</h3><p>1.@override  使必须是覆写的方法</p>
-<p>2.@deprecated 表示该方法已过期</p>
-<p>3.@SuppressWarning 压制警告</p>
-<h3 id="3-多态性"><a href="#3-多态性" class="headerlink" title="3.多态性"></a>3.多态性</h3><p>向上及向下转型</p>
-<p>instanceof  –返回bool类型，判断俩个类之间是否有关联</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">superman</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        Person per<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">superman</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//向上转型</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>per <span class="token keyword">instanceof</span> <span class="token class-name">superman</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            superman man<span class="token operator">=</span><span class="token punctuation">(</span>superman<span class="token punctuation">)</span> per <span class="token comment" spellcheck="true">//向下转型</span>
-            <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <h1 id="SERVLET"><a href="#SERVLET" class="headerlink" title="SERVLET"></a>SERVLET</h1><h3 id="一．什么是-Servlet"><a href="#一．什么是-Servlet" class="headerlink" title="一．什么是 Servlet."></a>一．什么是 Servlet.</h3><p>Servlet 是 JavaWeb 的三大组件之一,它属于动态资源。Servlet 的作用处理请求，服务器会把接收到的请求交给 Servlet 来处理。</p>
+<h3 id="二、在-Servlet-中通常需要"><a href="#二、在-Servlet-中通常需要" class="headerlink" title="二、在 Servlet 中通常需要:"></a>二、在 Servlet 中通常需要:</h3><p>1.接收请求数据;</p>
+<p>2.处理请求;</p>
+<p>3.完成响应；</p>
+<p>例如：</p>
+<p>客户端发出登录请求，或者输出注册请求，这些请求都应该由 Servlet 来完成处理！ Servlet 需要我们自己来编写，每个 Servlet 必须实现 javax.serlet.Serlet 接口。<img src="/2022/06/06/SERVLET/1.png"></p>
+<h3 id="实现-Servlet-的方式"><a href="#实现-Servlet-的方式" class="headerlink" title="实现 Servlet 的方式"></a>实现 Servlet 的方式</h3><p>\1. 实现 javax.servlet.Servlet 接口；</p>
+<p>\2. 继承 javax.servlet.GenericServlet 类；</p>
+<p>\3. 继承 javax.servlet.http.HttpServlet 类。</p>
+<p>注：通常使用继承 HttpServlet 类来完成 Servlet，但学习 Servlet 还要从javax.servlet.Servlet 接口开始学习。</p>
+<h3 id="如何写-Servlet（五种方法）"><a href="#如何写-Servlet（五种方法）" class="headerlink" title="如何写 Servlet（五种方法）"></a>如何写 Servlet（五种方法）</h3><img src="/2022/06/06/SERVLET/2.png">
+
+<p>方法一：void destroy()。它使生命周期方法，会在 Servlet 被销毁之前调用，且只会调用一次。</p>
+<p>方法二：ServletConfig getServletConfig()。可以用来获取 Servlet 的位置信息。</p>
+<p>方法三：String getServletInfo()。获取 Servlet 的信息。</p>
+<p>方法四：void init。生命周期方法，在 Servlet 对象创建之后马上执行，并只执行一次。</p>
+<p>方法五：void service。生命周期方法，可以被调用多次，且每次处理请求都是在调用这个方法。</p>
+<h3 id="如何让浏览器访问Servlet"><a href="#如何让浏览器访问Servlet" class="headerlink" title="如何让浏览器访问Servlet"></a>如何让浏览器访问Servlet</h3><p>\1. 给 Servlet 设定一个 Servlet 路径（让 Servlet 与一个路径绑定在一起）；</p>
+<p>\2. 浏览器访问 Servlet 路径</p>
+<p>\1) 如何给 Servlet 配置 Servlet 路径：</p>
+<p>在 web.xml 中对 Servlet 进行配置。</p>
+<img src="/2022/06/06/SERVLET/3.png">
+
+<p>启动程序，然后在浏览器访问。</p>
+<p>Servlet 在第一次被访问时“生”，服务器关闭的时候“死”。</p>
+<p>Servlet 是单例的，每个类有一个对象。一个时间点会出现多个请求。</p>
+<h3 id="Servle-特性："><a href="#Servle-特性：" class="headerlink" title="Servle 特性："></a>Servle 特性：</h3><p>\1. 单例，一个类只有一个对象，可能存在多个 Servle 类；</p>
+<p>\2. 线程不安全的，所以效率很高。</p>
+<p>\3. Servle 类由我们来写，但对象由服务器来创建，并且用服务器来调用相应的方法。</p>
+<ol>
+<li>GenericServlet概述</li>
+</ol>
+<p>GenericServlet是Servlet接口的实现类，我们可以通过继承GenericServlet来编写自己的Servlet。</p>
+<ol start="2">
+<li>ServletConfig是什么</li>
+</ol>
+<p>一个ServletConfig对象对应一段web.xml中Servlet的配置信息</p>
+<img src="/2022/06/06/SERVLET/4.png">
+
+<ol start="3">
+<li>ServletConfig对象的功能</li>
+</ol>
+<p>\1) String getServletName()，获取的是<servlet-name>中的内容；</servlet-name></p>
+<p>\2) ServletContext getServletContext()：获取Servlet上下文对象；</p>
+<p>\3) String getInitParameter(String name)：通过名称获取指定初始化参数的值；</p>
+<p>\4) Enumeration getInitParameterNames()：获取所有初始化参数的名称。</p>
+<p>程序：</p>
+<img src="/2022/06/06/SERVLET/5.png">
+
+
+
+<p>结果：</p>
+<img src="/2022/06/06/SERVLET/6.png">
+
+
+
+<p><strong>ServletRequst：请求。</strong></p>
+<p>获得请求数据、处理请求，对客户端进行响应。</p>
+<p>如何获取数据：</p>
+<p>所有数据都被 Config 分装到 ServletRequst 中，调用它的方法就能获得请求信息。</p>
+<p><strong>ServletResponse：响应</strong>。</p>
+<p>调用它的方法才能设置响应头和状态码，甚至可以用它发送 html 代码，这时请求被发送到浏览器，浏览器才能打开。</p>
+<h3 id="HttpServlet-简介"><a href="#HttpServlet-简介" class="headerlink" title="HttpServlet 简介"></a>HttpServlet 简介</h3><img src="/2022/06/06/SERVLET/7.png">
+
+ 
+
+<h3 id="HttpServlet-的原理"><a href="#HttpServlet-的原理" class="headerlink" title="HttpServlet 的原理"></a>HttpServlet 的原理</h3><p>HttpServlet extends GenderServlet {void service(ServletRequest,ServletResponse)为生命周期方法。故需要强转两个参数为 http 协议相关的类型，然后调用本类的service(HttpServletRequest，HttpServletReponse)。 voidservice(HttpServletRequest,HttpServletResponse)</p>
+<p>\3. * 它会通过 request 得到当前请求的请求方式，例如：GET或POST</p>
+<p>\4. * 根据请求方式再调用 doGet()或 doPost()方法</p>
+<p>\5. void doGet(){…} –&gt; 重写</p>
+<p>\6. void doPost() {…} –&gt; 重写</p>
+<p>\7. 图示：</p>
+<img src="/2022/06/06/SERVLET/8.png">
+
+<p>\8. 代码：</p>
+<img src="/2022/06/06/SERVLET/9.png">
+
+<p>9.运行结果：</p>
+<img src="/2022/06/06/SERVLET/10.png">
+
+<p>10.创建 FServlet</p>
+<img src="/2022/06/06/SERVLET/11.png">
+
+ 
+
+<h3 id="域对象的功能"><a href="#域对象的功能" class="headerlink" title="域对象的功能"></a>域对象的功能</h3><p>ServletContext 是 JavaWeb 四大域对象之一:<br>PageContext;<br>ServletReguest;<br>HttpSession;<br>SenvletContext;<br>所有域对象都有存取数据的功能，因为域对象内部有-个Map,用来存储数据，</p>
+<p>下面是 ServletContext. 对象用来操作数据的方法:<br><strong>1.void SetAttribute(String name.object value):</strong></p>
+<p>用来存储一一个对象,也可以称之为存储一-个域属性，例如: serletCotetstitrtl(xx”,”“XX*),在 ServletContext 中保存了一个域属性，域属性名称为xox ,域属性的值为)XX.请注意,如果多次调用该方法,并且使用相同的 name ,那么会覆盖上-次的值，这一特性与 Map 相同;</p>
+<p><strong>2.Object getAttribute(String name):</strong></p>
+<p>用来获取 ServletContext 中的数据，当前在获取之前需要先去存储才行，例如: String value=(rtingestrclCntetote(‘“;”获取名为 xx 的域属性;</p>
+<p><strong>3.void removettribute(tring name):</strong></p>
+<p>用来移除 ServletContext 中的域属性，如果参数 name 指定的域属性不存在，那么本方法什么都不做;</p>
+<p><strong>4.Enumeration gettributeNames():</strong></p>
+<p>获取所有域属性的名称;</p>
+<p>1.获取 servletContext 对象</p>
+<p>2.调用其 getAttribute (方法完成荻取数据 Servletcontext application-<code>this .getServletcontext();</code></p>
+<pre><code>string name = (string) application.getAttribute (&quot;name&quot;) 
+system. out.println (name);
 </code></pre>
-<h3 id="4-装箱与拆箱"><a href="#4-装箱与拆箱" class="headerlink" title="4.装箱与拆箱"></a>4.装箱与拆箱</h3><p>将一个变量包装成一个类，例如int 使用Integer  自动装箱 例如：Integer obj=10；被包装的变量可以实现各类运算。使用int a=obj自动拆箱（装箱以方便统一使用objecct传递参数）</p>
-<h3 id="5-俩种设计模式"><a href="#5-俩种设计模式" class="headerlink" title="5.俩种设计模式"></a>5.俩种设计模式</h3><p>1.代理模式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">eatreal</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实主题：吃东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">daili</span> <span class="token keyword">implements</span> <span class="token class-name">IEate</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> IEat eat<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token function">daili</span><span class="token punctuation">(</span>IEat eat<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>eat<span class="token operator">=</span>eat<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>eat<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理主题：买东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理主题：做东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        IEat eat<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">daili</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">eatreal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        eat<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h3 id="servlercontext-获取应用初始化参数"><a href="#servlercontext-获取应用初始化参数" class="headerlink" title="servlercontext 获取应用初始化参数"></a>servlercontext 获取应用初始化参数</h3><p>1.Senvlet. 也可以获职初始化参数，但它是局部的参数;也就是说，一个 Servlet, 只能获取自己的初始化参数，不能获取别人的，即初始化参数只为一个 Servlet .准备!<br>2.可以配置公共的初始化参数，为所有Servlet,而用!这需要使用 SerletContex. 才能使用!</p>
+<h3 id="获取真实路径"><a href="#获取真实路径" class="headerlink" title="获取真实路径"></a>获取真实路径</h3><p>还可以使用 ServletContext 对象来获取 Web 应用下的资源,例如在 hello 应用的根目录下创建 a.txt 文件,现在想在 Servet 中获取这个资源，就可以使用SerndetContext 来获取。<br>获取路径：</p>
+<p>A.txt:String realPath = servletContext.getRealPath(“/a.txt”), realPath的值为a.txt文件的绝对路径: F:\tomcat6\webapph\ello\a.txt;<br>b.txt:String realPath= servletContext.getRealPath(“/WEB-INF/o.txt”);</p>
+<h3 id="获取资源流"><a href="#获取资源流" class="headerlink" title="获取资源流"></a>获取资源流</h3><p>不只可以获取资源的路径,还可以通过 ServletContext 获取资源流，即把资源以输入流的方式获取:<br>获取资源：</p>
+<p>A.txt:InputStream in= servetContext.getResourceAsStream(“/a.txt”);<br>B.txt:InputStreamin= seryletContext.getResourceAsStream(“/WEB-INF/b.txt”);</p>
+<h3 id="获取指定目录-下所有资源路径。"><a href="#获取指定目录-下所有资源路径。" class="headerlink" title="获取指定目录 下所有资源路径。"></a>获取指定目录 下所有资源路径。</h3><p>还可以使用 ServletContext .获取指定目录下所有资源路径，例如获取 /WEB-INF 下所有资源的路径:</p>
+<pre class=" language-java"><code class="language-java">Set set<span class="token operator">=</span>context<span class="token punctuation">.</span><span class="token function">getResourcePaths</span><span class="token punctuation">(</span><span class="token string">"WEB-INF"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>2.工厂模式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">food</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">bread</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"吃面包"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Milk</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"喝牛奶"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Factory</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> food <span class="token function">getinstance</span><span class="token punctuation">(</span>String classname<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"bread"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>classname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">bread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"milk"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>classname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Milk</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-       food foodd<span class="token operator">=</span>Factory<span class="token punctuation">.</span><span class="token function">getinstance</span><span class="token punctuation">(</span>arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        food<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h2 id="监视器Filte"><a href="#监视器Filte" class="headerlink" title="监视器Filte"></a>监视器Filte</h2><p>它会在一组资源的前面执行，可以让请求得到目标资源，可以不然请求达到，</p>
+<p>它是单例的！</p>
+<h4 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h4><p>1.写一个类实现Filter接口：</p>
+<p>​    Filter接口：</p>
+<p>​    void init(FilterConfig)</p>
+<p>​        *创建之后马上执行；Filter会在服务器启动时创建！</p>
+<p>​    void destory()</p>
+<p>​        *销毁之前执行！服务器关闭时销毁</p>
+<p>void doFilter(ServletRequest,ServletRespone,FilterChain)</p>
+<p>​        *每次过滤都会执行</p>
+<p>​        FilterChain：</p>
+<p>​                *doFilter(ServletRequest,ServletRespone)放行！相当于调用servlet的service方法</p>
+<p>2.在web.xml中进行配置</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>类名称<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-class</span><span class="token punctuation">></span></span>包类路径<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-class</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-mapping</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>类名称<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-mapping</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="6-抽象类与接口的区别"><a href="#6-抽象类与接口的区别" class="headerlink" title="6.抽象类与接口的区别"></a>6.抽象类与接口的区别</h3><table>
-<thead>
-<tr>
-<th align="center">区别</th>
-<th align="center">抽象类</th>
-<th align="center">接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">定义关键字</td>
-<td align="center">abstract class</td>
-<td align="center">interface</td>
-</tr>
-<tr>
-<td align="center">组成</td>
-<td align="center">构造，普通方法，静态方法，全局常量，成员</td>
-<td align="center">抽象方法，全局常量，普通方法，static方法</td>
-</tr>
-<tr>
-<td align="center">权限</td>
-<td align="center">各种权限定义</td>
-<td align="center">只能使用public</td>
-</tr>
-<tr>
-<td align="center">子类使用</td>
-<td align="center">extends只能继承一个抽象类</td>
-<td align="center">使用implements可以实现多个接口</td>
-</tr>
-<tr>
-<td align="center">俩者关系</td>
-<td align="center">抽象类可以实现多个接口</td>
-<td align="center">接口不允许继承抽象类，但允许继承多个父接口</td>
-</tr>
-</tbody></table>
-<p>当抽象类与接口都可以实现的情况下，优先使用接口</p>
-<h3 id="7-内部类"><a href="#7-内部类" class="headerlink" title="7.内部类"></a>7.内部类</h3><p>会破坏代码的结构，但可以任意调用外部类的私有属性，外部类也可以访问内部类的私有属性。</p>
-<p>内部类的实例化方法：外部类.内部类 对象名称 = new 外部类（）.new 内部类（）;</p>
-<p>如果在内部类中中使用static定义，那么内部类就变成了外部类</p>
-<p>如果需要实例化static定义的内部类则：</p>
-<p>外部类.内部类 对象名称 = new 外部类.内部类（）;</p>
-<p>一般使用static定义内部接口，以方便统一。</p>
-<p>内部类可以并且通常都在方法中定义</p>
-<h6 id="内部接口："><a href="#内部接口：" class="headerlink" title="内部接口："></a>内部接口：</h6><p>内部接口可以不被继承</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IChannel</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>IMessage mes<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">interface</span> <span class="token class-name">IMessage</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">temp</span> <span class="token keyword">implements</span> <span class="token class-name">IChannel</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>IMessage mes<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>mas<span class="token punctuation">.</span>getContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">mestemp</span> <span class="token keyword">implements</span> <span class="token class-name">IMessage</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-           Ichannel channel<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">temp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          channel<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>channel<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">mestemp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//此处channel为Ichannel类型，不能实例化temp的子类。</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h4 id="过滤器的四种拦截方式"><a href="#过滤器的四种拦截方式" class="headerlink" title="过滤器的四种拦截方式"></a>过滤器的四种拦截方式</h4><p>1.请求<dispatcher>REQUEST</dispatcher></p>
+<p>2.转发<dispatcher>FORWORD</dispatcher></p>
+<p>3.包含<dispatcher>INCLUDE</dispatcher></p>
+<p>4.错误<dispatcher>ERROR</dispatcher></p>
+<p>在<filter-mapping>中配置</filter-mapping></p>
+<p>使用filter-mapping控制多个过滤器的执行顺序：filter-mapping的位置顺序决定过滤器的执行顺序</p>
+<h3 id="监听器listener："><a href="#监听器listener：" class="headerlink" title="监听器listener："></a>监听器listener：</h3><p>事件源：ServletContext：</p>
+<p>​                        生死监听：ServeltContextListener，它有俩个方法，一个在出生时调用，一个在销毁时调用</p>
+<p>​                        属性监听：ServeltContextAttributeListener三个方法，分别在在添加，替换，移除属性时调用，且可以获取属性与属性值</p>
+<p>​                HttpSession</p>
+<p>​                     生死监听：HttpSessionListener，它有俩个方法，一个在出生时调用，一个在销毁时调用</p>
+<p>​                        属性监听：HttpSessionAttributeListener，三个方法，分别在在添加，替换，移除属性时调用且可以获取属性与属性值</p>
+<p>​                ServletRequest</p>
+<p>​                        生死监听：ServletRequestListener，它有俩个方法，一个在出生时调用，一个在销毁时调用</p>
+<p>​                        属性监听：ServletRequestAttributeListener，三个方法，分别在在添加，替换，移除属性时调用且可以获取属性与属性值</p>
+<p>完成监听器：</p>
+<p>​    1.写一个监听器类，实现某个监听器接口</p>
+<p>​    2.在web.xml中配置完成注册：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listener</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listener-class</span><span class="token punctuation">></span></span>包类路径<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listener-class</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listener</span><span class="token punctuation">></span></span>
 </code></pre>
-<h6 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h6><p>匿名内部类是一个没有名字且只能使用一次的，并且结构固定的一个子类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IMessage</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> IMessage <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//static方法实现</span>
-        <span class="token keyword">return</span> <span class="token function">IMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//匿名内部类</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printfln</span><span class="token punctuation">(</span><span class="token string">"str"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String arg<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        IMessage<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="8-Lambda表达式"><a href="#8-Lambda表达式" class="headerlink" title="8.Lambda表达式"></a>8.Lambda表达式</h3><p>用于函数式接口（只有一个抽象方法的接口）。</p>
-<p>格式：</p>
-<ul>
-<li>方法没有参数：()-&gt;{};</li>
-<li>方法有参数：(参数，参数)-&gt;{};</li>
-<li>只有一行语句返回：(参数，参数)-&gt;语句；</li>
-</ul>
+<h6 id="感知监听：（都与httpsession相关）"><a href="#感知监听：（都与httpsession相关）" class="headerlink" title="感知监听：（都与httpsession相关）"></a>感知监听：（都与httpsession相关）</h6><p>​    1.它用来添加到javabean上，而不是三大域</p>
+<p>​    2.不要在web.xml中注册</p>
+<p>接口：httpsessionbindinglistener：作用在user上，当session绑定或解除绑定时触发</p>
+<p>​            httpsessionactivationlistener：作用在user上，当session被钝化或者活化时调用</p>
+<p>session的钝化与活化：<img src="/2022/06/06/SERVLET/12.png"></p>
+<p>序列化接口：java.io.serializable</p>
+<p>​    Tomcat 会在 session 从时间不被使用时钝化 session 对象，所谓钝化 session ,就是把 session 通过序列化的方式保存到硬盘文件中.</p>
+<p>当用户再使用 session 时,Tomcat 还会把钝化的对象再活化 session，所谓活化就是把硬盘文件中的 session 在反序列化回内存。当 session 被 Tomcat 钝化时， session 中存储的对象也被纯化，当 session 被活化时，也会把 session 中存储的对象活化。</p>
 
                 
             </div>
@@ -666,7 +649,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/06/05/java/">http://example.com/2022/06/05/java/</a>
+                    <a href="http://example.com/2022/06/06/SERVLET/">http://example.com/2022/06/06/SERVLET/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -875,54 +858,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/06/06/JDBC/">
+                <a href="/2022/06/06/SERVLET/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="JDBC">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="SERVLET">
                         
-                        <span class="card-title">JDBC</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Ghout-mouse
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/06/04/Mybatisplus/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Mybatisplus">
-                        
-                        <span class="card-title">Mybatisplus</span>
+                        <span class="card-title">SERVLET</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -933,7 +880,45 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Ghout-mouse
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/06/06/java%E9%AB%98%E7%BA%A7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="java高级">
+                        
+                        <span class="card-title">java高级</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-06
                             </span>
                         <span class="publish-author">
                             

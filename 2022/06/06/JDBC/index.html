@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java, Ghost">
-    <meta name="description" content="java[]: https://docs.oracle.com/javase/9/docs/api/overview-summary.html    “JAVADOC”
-驼峰命名法：驼峰式命名法就是当变量名或函式名是由一个或多个单词连结在一">
+    <meta name="keywords" content="JDBC, Ghost">
+    <meta name="description" content="JDBCjdbc配置四大参数：driverClassName:  com.mysql.jdbc.Driver
+url:                            jdbc:mysql://localhost::3306/数据库名">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
 
     
 
-    <title>java | Ghost</title>
+    <title>JDBC | Ghost</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java</h1>
+                    <h1 class="description center-align post-title">JDBC</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-05
+                    2022-06-06
                 </div>
                 
 
@@ -464,182 +464,121 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><p>[]: <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/9/docs/api/overview-summary.html">https://docs.oracle.com/javase/9/docs/api/overview-summary.html</a>    “JAVADOC”</p>
-<h2 id="驼峰命名法："><a href="#驼峰命名法：" class="headerlink" title="驼峰命名法："></a>驼峰命名法：</h2><p>驼峰式命名法就是当变量名或函式名是由一个或多个单词连结在一起，而构成的唯一识别字时，第一个单词以小写字母开始；第二个单词的首字母大写或每一个单词的首字母都采用大写字母，例如：myFirstName、myLastName，这样的变量名看上去就像驼峰峰一样此起彼伏，故得名。<br>驼峰式命名法的命名规则可视为一种惯例，并无绝对与强制，为的是增加识别和可读性。</p>
-<h3 id="小驼峰法"><a href="#小驼峰法" class="headerlink" title="小驼峰法"></a>小驼峰法</h3><p>变量一般用小驼峰法标识。驼峰法的意思是：除第一个单词之外，其他单词首字母大写。譬如<br>int myStudentCount;<br>变量myStudentCount第一个单词是全部小写，后面的单词首字母大写。</p>
-<h3 id="大驼峰法"><a href="#大驼峰法" class="headerlink" title="大驼峰法"></a>大驼峰法</h3><p>相比小驼峰法，大驼峰法把第一个单词的首字母也大写了。常用于类名，函数名，属性，命名空间。譬如<br>public class DataBaseUser;</p>
-<h3 id="1-关于static"><a href="#1-关于static" class="headerlink" title="1.关于static"></a>1.关于static</h3><p>使用static关键字即将变量/方法定义为公共。在类不被实体化时就可以使用。static方法只允许调用static属性或static方法。而非static方法可以调用static方法或属性。</p>
-<p>static代码块优先执行（包括主函数）</p>
-<h3 id="2-Annotation注解"><a href="#2-Annotation注解" class="headerlink" title="2.Annotation注解"></a>2.Annotation注解</h3><p>1.@override  使必须是覆写的方法</p>
-<p>2.@deprecated 表示该方法已过期</p>
-<p>3.@SuppressWarning 压制警告</p>
-<h3 id="3-多态性"><a href="#3-多态性" class="headerlink" title="3.多态性"></a>3.多态性</h3><p>向上及向下转型</p>
-<p>instanceof  –返回bool类型，判断俩个类之间是否有关联</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">superman</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        Person per<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">superman</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//向上转型</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>per <span class="token keyword">instanceof</span> <span class="token class-name">superman</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            superman man<span class="token operator">=</span><span class="token punctuation">(</span>superman<span class="token punctuation">)</span> per <span class="token comment" spellcheck="true">//向下转型</span>
-            <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+                <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h4 id="jdbc配置四大参数："><a href="#jdbc配置四大参数：" class="headerlink" title="jdbc配置四大参数："></a>jdbc配置四大参数：</h4><p>driverClassName:  com.mysql.jdbc.Driver</p>
+<p>url:                            jdbc:mysql://localhost::3306/数据库名</p>
+<p>username:               root</p>
+<p>password:                ***********</p>
+<h3 id="对数据库的增，删，改"><a href="#对数据库的增，删，改" class="headerlink" title="对数据库的增，删，改"></a>对数据库的增，删，改</h3><p>1.通过connection 对象创建statement（向数据库发送sql语句的发送器）</p>
+<p>2.调用它的int executeUpdate(String sql),它可以发送DML,DDL  （返回对数据库几行有影响）</p>
+<p><strong>3.关闭资源</strong>（倒着关）</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DriverManager<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Statement<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String arg<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException<span class="token punctuation">,</span> SQLException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//数据库四件套</span>
+        Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.cj.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String url<span class="token operator">=</span><span class="token string">"jdbc:mysql://localhost:3306/mouse"</span><span class="token punctuation">;</span>
+        String username<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">;</span>
+        String password<span class="token operator">=</span><span class="token string">"111111"</span><span class="token punctuation">;</span>
+        Connection con<span class="token operator">=</span> DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// System.out.println(con);</span>
+
+        <span class="token comment" spellcheck="true">//获取statement对象</span>
+        Statement sta<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//使用statement发送sql语句</span>
+        String sql<span class="token operator">=</span><span class="token string">"INSERT INTO student VALUES('204361111','mouse','男',18,'信息学院')"</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> m<span class="token operator">=</span>sta<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment" spellcheck="true">//关闭资源</span>
+        sta<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        con<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="查询："><a href="#查询：" class="headerlink" title="查询："></a>查询：</h4><p>1.通过connection 对象创建statement（向数据库发送sql语句的发送器）</p>
+<p>2.调用ResultSet rs=executeQuery(String querysql)</p>
+<p>3.解析resultset    该方法自带一个行光标  默认指向beforefirst  需要调用next（）语句将行光标往下</p>
+<p><strong>4.关闭资源（倒着关）</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String arg<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException<span class="token punctuation">,</span> SQLException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//数据库四件套</span>
+        Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.cj.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String url<span class="token operator">=</span><span class="token string">"jdbc:mysql://localhost:3306/mouse"</span><span class="token punctuation">;</span>
+        String username<span class="token operator">=</span><span class="token string">"root"</span><span class="token punctuation">;</span>
+        String password<span class="token operator">=</span><span class="token string">"111111"</span><span class="token punctuation">;</span>
+        Connection con<span class="token operator">=</span> DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// System.out.println(con);</span>
+
+        <span class="token comment" spellcheck="true">//获取statement对象</span>
+        Statement sta<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//查询</span>
+        ResultSet rs<span class="token operator">=</span>sta<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token string">"select *from student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//解析resultset</span>
+        <span class="token comment" spellcheck="true">//调用next方法把光标使光标移动</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            String x<span class="token operator">=</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"xuehao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String n<span class="token operator">=</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String s<span class="token operator">=</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"sex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> a<span class="token operator">=</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String d<span class="token operator">=</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"sdept"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>n<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>s<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>a<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        rs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sta<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        con<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="4-装箱与拆箱"><a href="#4-装箱与拆箱" class="headerlink" title="4.装箱与拆箱"></a>4.装箱与拆箱</h3><p>将一个变量包装成一个类，例如int 使用Integer  自动装箱 例如：Integer obj=10；被包装的变量可以实现各类运算。使用int a=obj自动拆箱（装箱以方便统一使用objecct传递参数）</p>
-<h3 id="5-俩种设计模式"><a href="#5-俩种设计模式" class="headerlink" title="5.俩种设计模式"></a>5.俩种设计模式</h3><p>1.代理模式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">eatreal</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"真实主题：吃东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">daili</span> <span class="token keyword">implements</span> <span class="token class-name">IEate</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> IEat eat<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token function">daili</span><span class="token punctuation">(</span>IEat eat<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>eat<span class="token operator">=</span>eat<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>eat<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理主题：买东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"代理主题：做东西"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        IEat eat<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">daili</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">eatreal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        eat<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<p>2.工厂模式：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">food</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">bread</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"吃面包"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Milk</span> <span class="token keyword">implements</span> <span class="token class-name">IEat</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"喝牛奶"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Factory</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> food <span class="token function">getinstance</span><span class="token punctuation">(</span>String classname<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"bread"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>classname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">bread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"milk"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>classname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Milk</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span> <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-       food foodd<span class="token operator">=</span>Factory<span class="token punctuation">.</span><span class="token function">getinstance</span><span class="token punctuation">(</span>arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        food<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="6-抽象类与接口的区别"><a href="#6-抽象类与接口的区别" class="headerlink" title="6.抽象类与接口的区别"></a>6.抽象类与接口的区别</h3><table>
-<thead>
-<tr>
-<th align="center">区别</th>
-<th align="center">抽象类</th>
-<th align="center">接口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">定义关键字</td>
-<td align="center">abstract class</td>
-<td align="center">interface</td>
-</tr>
-<tr>
-<td align="center">组成</td>
-<td align="center">构造，普通方法，静态方法，全局常量，成员</td>
-<td align="center">抽象方法，全局常量，普通方法，static方法</td>
-</tr>
-<tr>
-<td align="center">权限</td>
-<td align="center">各种权限定义</td>
-<td align="center">只能使用public</td>
-</tr>
-<tr>
-<td align="center">子类使用</td>
-<td align="center">extends只能继承一个抽象类</td>
-<td align="center">使用implements可以实现多个接口</td>
-</tr>
-<tr>
-<td align="center">俩者关系</td>
-<td align="center">抽象类可以实现多个接口</td>
-<td align="center">接口不允许继承抽象类，但允许继承多个父接口</td>
-</tr>
-</tbody></table>
-<p>当抽象类与接口都可以实现的情况下，优先使用接口</p>
-<h3 id="7-内部类"><a href="#7-内部类" class="headerlink" title="7.内部类"></a>7.内部类</h3><p>会破坏代码的结构，但可以任意调用外部类的私有属性，外部类也可以访问内部类的私有属性。</p>
-<p>内部类的实例化方法：外部类.内部类 对象名称 = new 外部类（）.new 内部类（）;</p>
-<p>如果在内部类中中使用static定义，那么内部类就变成了外部类</p>
-<p>如果需要实例化static定义的内部类则：</p>
-<p>外部类.内部类 对象名称 = new 外部类.内部类（）;</p>
-<p>一般使用static定义内部接口，以方便统一。</p>
-<p>内部类可以并且通常都在方法中定义</p>
-<h6 id="内部接口："><a href="#内部接口：" class="headerlink" title="内部接口："></a>内部接口：</h6><p>内部接口可以不被继承</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IChannel</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>IMessage mes<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">interface</span> <span class="token class-name">IMessage</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">temp</span> <span class="token keyword">implements</span> <span class="token class-name">IChannel</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>IMessage mes<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>mas<span class="token punctuation">.</span>getContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">class</span> <span class="token class-name">mestemp</span> <span class="token keyword">implements</span> <span class="token class-name">IMessage</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-           Ichannel channel<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">temp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          channel<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>channel<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">mestemp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//此处channel为Ichannel类型，不能实例化temp的子类。</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h6 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h6><p>匿名内部类是一个没有名字且只能使用一次的，并且结构固定的一个子类。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">IMessage</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> IMessage <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//static方法实现</span>
-        <span class="token keyword">return</span> <span class="token function">IMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//匿名内部类</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">send</span><span class="token punctuation">(</span>String str<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printfln</span><span class="token punctuation">(</span><span class="token string">"str"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">main</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String arg<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        IMessage<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="8-Lambda表达式"><a href="#8-Lambda表达式" class="headerlink" title="8.Lambda表达式"></a>8.Lambda表达式</h3><p>用于函数式接口（只有一个抽象方法的接口）。</p>
-<p>格式：</p>
+<h3 id="规范化："><a href="#规范化：" class="headerlink" title="规范化："></a>规范化：</h3><p>在try外定义对象，在try内获取实例化对象，在finally中关闭对象(防止发生异常后执行不到关闭资源的语句)</p>
+<h3 id="ResultSet结果集光标挪动："><a href="#ResultSet结果集光标挪动：" class="headerlink" title="ResultSet结果集光标挪动："></a>ResultSet结果集光标挪动：</h3><p><img src="/2022/06/06/JDBC/ResultSet%E6%96%B9%E6%B3%951.png"></p>
+<p><img src="/2022/06/06/JDBC/ResultSet%E6%96%B9%E6%B3%952.png"></p>
+<p>获取结果集元数据：</p>
 <ul>
-<li>方法没有参数：()-&gt;{};</li>
-<li>方法有参数：(参数，参数)-&gt;{};</li>
-<li>只有一行语句返回：(参数，参数)-&gt;语句；</li>
+<li>得到元数据：rs.getMetaData(),返回值为ResultSetMetaData;</li>
+<li>获取结果集列数:int getColumnCount();</li>
+<li>获取指定列的列名: String getColumnName(int collindex)</li>
 </ul>
+<h2 id="preparestatement"><a href="#preparestatement" class="headerlink" title="preparestatement"></a>preparestatement</h2><p><u>在进行con获取时，url为url=”jdbc:mysql://localhost:3306/数据库名称?useServerPrepStmts=true&amp;cachePrepStmts=true”;</u><strong>(?)</strong></p>
+<p>来打开mysql的预编译功能（mysql默认关闭预编译功能）</p>
+<ul>
+<li>是statement的子接口</li>
+<li>可以防止SQL攻击</li>
+<li>提高代码的可读性，可维护性</li>
+<li>提高效率</li>
+</ul>
+<p>使用前提：</p>
+<ul>
+<li>连接的数据区必须支持预处理</li>
+<li>每个pstmt都与一个sql模板绑定在一起，先把sql给数据库，数据库先进行效验，再进行编译。执行时只是把参数传递过去，若二次执行时就不用再校验语法，也不用再次编译，直接执行，从而提高效率。</li>
+</ul>
+<p>书写例子（用户登录防止SQL攻击查询）：</p>
+<pre class=" language-java"><code class="language-java">String sql<span class="token operator">=</span><span class="token string">"select *from user where username=? and password=?"</span><span class="token punctuation">;</span>
+PreparedStatement pstm<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//为参数（？）赋值</span>
+pstm<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第一个参数为第几个括号</span>
+pstm<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ResultSet rs<span class="token operator">=</span>pstm<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="批处理："><a href="#批处理：" class="headerlink" title="批处理："></a>批处理：</h4><p>mysql默认关闭批处理，在url中加入?rewriteBatchenStatements=true打开</p>
+<p>当需要向数据库发送的指令过多时，为了提高效率，可以使用批处理，即一批一批的处理需要发送的指令</p>
+<pre class=" language-java"><code class="language-java">String sql<span class="token operator">=</span><span class="token string">"select *from user where username=? and password=?"</span><span class="token punctuation">;</span>
+PreparedStatement pstm<span class="token operator">=</span>con<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">10000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    pstm<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"user"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstm<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"1234"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pstm<span class="token punctuation">.</span><span class="token function">addBatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//添加批</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+pstm<span class="token punctuation">.</span><span class="token function">executeBatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment" spellcheck="true">//执行批</span>
+</code></pre>
+<h4 id><a href="#" class="headerlink" title></a></h4><p>​                                                                                    </p>
 
                 
             </div>
@@ -666,7 +605,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/06/05/java/">http://example.com/2022/06/05/java/</a>
+                    <a href="http://example.com/2022/06/06/JDBC/">http://example.com/2022/06/06/JDBC/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -879,13 +818,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/06/JDBC/">
+                <a href="/2022/06/06/JSP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="JDBC">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSP">
                         
-                        <span class="card-title">JDBC</span>
+                        <span class="card-title">JSP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,13 +855,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/04/Mybatisplus/">
+                <a href="/2022/06/05/java/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Mybatisplus">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java">
                         
-                        <span class="card-title">Mybatisplus</span>
+                        <span class="card-title">java</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -933,7 +872,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-05
                             </span>
                         <span class="publish-author">
                             
