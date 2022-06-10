@@ -580,18 +580,18 @@
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
 <span class="token comment" spellcheck="true">// 扫描mapper接口所在的包</span>
 <span class="token annotation punctuation">@MapperScan</span><span class="token punctuation">(</span><span class="token string">"com.atguigu.mybatisplus.mapper"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisplusApplication</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisplusApplication</span> <span class="token punctuation">{</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>MybatisplusApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-添加实体"><a href="#c-gt-添加实体" class="headerlink" title="c&gt;添加实体"></a>c&gt;添加实体</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
 <span class="token annotation punctuation">@NoArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -600,22 +600,22 @@
 </code></pre>
 <p><strong>使用了Lombok注解</strong></p>
 <h3 id><a href="#" class="headerlink" title></a><img src="/2022/06/04/Mybatisplus/image4.png" alt="img"></h3><h3 id="d-gt-添加mapper"><a href="#d-gt-添加mapper" class="headerlink" title="d&gt;添加mapper"></a>d&gt;添加mapper</h3><p><strong>BaseMapper</strong>是MyBatis-Plus提供的<strong>模板mapper</strong>，其中包含了基本的CRUD方法，<strong>泛型为操作的实体类型</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="e-gt-测试"><a href="#e-gt-测试" class="headerlink" title="e&gt;测试"></a>e&gt;测试</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>
-<span class="token keyword">class</span> <span class="token class-name">MybatisplusApplicationTests</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">MybatisplusApplicationTests</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Autowired</span>
     <span class="token keyword">private</span> UserMapper userMapper<span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 通过条件构造器查询一个List集合，若没有条件，则可以设置null为参数</span>
         List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
         list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="/2022/06/04/Mybatisplus/image5.png" alt="img"></p>
 <h4 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h4><p>IDEA在 userMapper 处报错，因为找不到注入的对象，因为类是动态创建的，但是程序可以正确 的执行。</p>
@@ -712,7 +712,7 @@
  * @author hubin
  * @since 2016-01-23
  */</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Mapper</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">Mapper</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 插入一条记录
@@ -799,16 +799,16 @@
      *
      * @param queryWrapper 实体对象封装操作类（可以为 null）
      */</span>
-    <span class="token keyword">default</span> T <span class="token function">selectOne</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>WRAPPER<span class="token punctuation">)</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span> T <span class="token function">selectOne</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>WRAPPER<span class="token punctuation">)</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         List<span class="token operator">&lt;</span>T<span class="token operator">></span> ts <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>CollectionUtils<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>ts<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>CollectionUtils<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ts<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token keyword">throw</span> ExceptionUtils<span class="token punctuation">.</span><span class="token function">mpe</span><span class="token punctuation">(</span><span class="token string">"One record is expected, but the query result is multiple records"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
             <span class="token keyword">return</span> ts<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/**
      * 根据 Wrapper 条件，判断是否存在记录
@@ -816,10 +816,10 @@
      * @param queryWrapper 实体对象封装操作类
      * @return
      */</span>
-    <span class="token keyword">default</span> <span class="token keyword">boolean</span> <span class="token function">exists</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span> <span class="token keyword">boolean</span> <span class="token function">exists</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Long count <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">selectCount</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> null <span class="token operator">!=</span> count <span class="token operator">&amp;&amp;</span> count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/**
      * 根据 Wrapper 条件，查询总记录数
@@ -865,11 +865,11 @@
      * @param queryWrapper 实体对象封装操作类
      */</span>
     <span class="token operator">&lt;</span>P <span class="token keyword">extends</span> <span class="token class-name">IPage</span><span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>>></span> P <span class="token function">selectMapsPage</span><span class="token punctuation">(</span>P page<span class="token punctuation">,</span> <span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>WRAPPER<span class="token punctuation">)</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="2、插入"><a href="#2、插入" class="headerlink" title="2、插入"></a>2、插入</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 测试BaseMapper的新增功能 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testInsert</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testInsert</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 实现新增用户信息</span>
     <span class="token comment" spellcheck="true">// INSERT INTO user ( id, name, age, email ) VALUES ( ?, ?, ?, ? )</span>
     User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -880,40 +880,40 @@
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">";result = "</span><span class="token punctuation">;</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">";id = "</span><span class="token punctuation">;</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>最终执行的结果，所获取的id为1475754982694199298 </p>
 <p>这是因为MyBatis-Plus在实现插入数据时，<strong>会默认基于雪花算法的策略生成id</strong></p>
 <h2 id="3、删除"><a href="#3、删除" class="headerlink" title="3、删除"></a>3、删除</h2><h3 id="a-gt-根据id查询用户信息"><a href="#a-gt-根据id查询用户信息" class="headerlink" title="a&gt;根据id查询用户信息"></a>a&gt;根据id查询用户信息</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span> 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//通过id删除用户信息 </span>
     <span class="token comment" spellcheck="true">//DELETE FROM user WHERE id=? </span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>1475754982694199298L<span class="token punctuation">)</span><span class="token punctuation">;</span> 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"受影响行数："</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="b-gt-根据多个id查询多个用户信息"><a href="#b-gt-根据多个id查询多个用户信息" class="headerlink" title="b&gt;根据多个id查询多个用户信息"></a>b&gt;根据多个id查询多个用户信息</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteBatchIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteBatchIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//通过多个id批量删除 </span>
     <span class="token comment" spellcheck="true">//DELETE FROM user WHERE id IN ( ? , ? , ? ) </span>
     List<span class="token operator">&lt;</span>Long<span class="token operator">></span> idList <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>1L<span class="token punctuation">,</span> 2L<span class="token punctuation">,</span> 3L<span class="token punctuation">)</span><span class="token punctuation">;</span> 
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">deleteBatchIds</span><span class="token punctuation">(</span>idList<span class="token punctuation">)</span><span class="token punctuation">;</span> 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"受影响行数："</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-通过map条件删除记录"><a href="#c-gt-通过map条件删除记录" class="headerlink" title="c&gt;通过map条件删除记录"></a>c&gt;通过map条件删除记录</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 测试BaseMapper的 添加功能  **/</span>
 <span class="token annotation punctuation">@Test</span> 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteByMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteByMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//根据map集合中所设置的条件删除记录 </span>
     <span class="token comment" spellcheck="true">//DELETE FROM user WHERE name = ? AND age = ? </span>
     Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">deleteByMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span> 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"受影响行数："</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="4、修改"><a href="#4、修改" class="headerlink" title="4、修改"></a>4、修改</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 测试BaseMapper的 修改功能  **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 修改用户信息</span>
     <span class="token comment" spellcheck="true">// UPDATE user SET name=?, email=? WHERE id=?</span>
     User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -922,28 +922,28 @@
     user<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">";lisi@atguigu.com"</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     userMapper<span class="token punctuation">.</span><span class="token function">updateById</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">";user = "</span><span class="token punctuation">;</span> <span class="token operator">+</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="5、查询"><a href="#5、查询" class="headerlink" title="5、查询"></a>5、查询</h2><h3 id="a-gt-根据id查询用户信息-1"><a href="#a-gt-根据id查询用户信息-1" class="headerlink" title="a&gt;根据id查询用户信息"></a>a&gt;根据id查询用户信息</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 测试BaseMapper的 查询功能 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 通过id查询用户信息</span>
     <span class="token comment" spellcheck="true">// SELECT id,name,age,email FROM user WHERE id=?</span>
     User user <span class="token operator">=</span> userMapper<span class="token punctuation">.</span>selectByIdƑL<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">";user = "</span><span class="token punctuation">;</span> <span class="token operator">+</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="b-gt-根据多个id查询多个用户信息-1"><a href="#b-gt-根据多个id查询多个用户信息-1" class="headerlink" title="b&gt;根据多个id查询多个用户信息"></a>b&gt;根据多个id查询多个用户信息</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span> 
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectBatchIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectBatchIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 根据多个id查询多个用户信息</span>
     <span class="token comment" spellcheck="true">// SELECT id,name,age,email FROM user WHERE id IN ( ? , ? , ? )</span>
     List<span class="token operator">&lt;</span>Long<span class="token operator">></span> list <span class="token operator">=</span> Arrays<span class="token punctuation">.</span>asListƑL<span class="token punctuation">,</span> 2L<span class="token punctuation">,</span> 3L<span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectBatchIds</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-通过map条件查询用户信息"><a href="#c-gt-通过map条件查询用户信息" class="headerlink" title="c&gt;通过map条件查询用户信息"></a>c&gt;通过map条件查询用户信息</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectByMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectByMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 根据map集合中的条件查询用户信息</span>
     <span class="token comment" spellcheck="true">// SELECT id,name,age,email FROM user WHERE name = ? AND age = ?</span>
     Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -951,28 +951,28 @@
     map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectByMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="d-gt-查询所有数据"><a href="#d-gt-查询所有数据" class="headerlink" title="d&gt; 查询所有数据"></a>d&gt; 查询所有数据</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 查询所有数据</span>
     <span class="token comment" spellcheck="true">// SELECT id,name,age,email FROM user</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>通过观察BaseMapper中的方法，大多方法中都有Wrapper类型的形参，此为条件构造器，<strong>可针对于SQL语句设置不同的条件，若没有条件，则可以为该形参赋值null，即查询（删除/修改）所有数据</strong></p>
 <h3 id="e-gt-自定义功能"><a href="#e-gt-自定义功能" class="headerlink" title="e&gt; 自定义功能"></a>e&gt; 自定义功能</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 根据id查询用户信息为map集合 **/</span>
 Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> <span class="token function">selectMapById</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> <span class="token function">selectMapById</span><span class="token punctuation">(</span>Long id<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"selectMapById"</span> resultType<span class="token operator">=</span><span class="token string">"map"</span><span class="token operator">></span>
-    select id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>email from t_user where id <span class="token operator">=</span> #<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>id<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    select id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>email from t_user where id <span class="token operator">=</span> #<span class="token punctuation">{</span>id<span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testConsumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testConsumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectMapById</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"map = "</span> <span class="token operator">+</span> map<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><h2 id="6、通用Service"><a href="#6、通用Service" class="headerlink" title="6、通用Service"></a>6、通用Service</h2><p>通用 Service CRUD 封装<strong>IService</strong>接口，进一步封装 CRUD 采用 <strong>get</strong> 查询单行 <strong>remove</strong> 删 </p>
 <p>除 <strong>list</strong> 查询集合 <strong>page</strong> 分页 前缀命名方式区分 Mapper 层避免混淆， </p>
@@ -983,9 +983,9 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 <h3 id="a-gt-IService"><a href="#a-gt-IService" class="headerlink" title="a&gt;IService"></a>a&gt;IService</h3><p>MyBatis-Plus中有一个<strong>接口 IService</strong>和<strong>其实现类 ServiceImpl</strong>，<strong>封装了常见的业务层逻辑</strong> </p>
 <p>详情查看源码<strong>IService</strong>和<strong>ServiceImpl</strong></p>
 <h3 id="b-gt-创建Service接口和实现类"><a href="#b-gt-创建Service接口和实现类" class="headerlink" title="b&gt;创建Service接口和实现类"></a>b&gt;创建Service接口和实现类</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 接口  UserService继承IService模板提供的基础功能</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 实现类</span>
 <span class="token comment" spellcheck="true">/*
    ServiceImpl实现了IService，提供了IService中基础功能的实现
@@ -993,9 +993,9 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
    并在实现类中实现
 */</span>
 <span class="token annotation punctuation">@Service</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>UserMapper<span class="token punctuation">,</span> User<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>UserMapper<span class="token punctuation">,</span> User<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-测试查询记录数"><a href="#c-gt-测试查询记录数" class="headerlink" title="c&gt;测试查询记录数"></a>c&gt;测试查询记录数</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
 <span class="token keyword">private</span> UserService userService<span class="token punctuation">;</span>
@@ -1003,30 +1003,30 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 
 <span class="token comment" spellcheck="true">/** 查询总记录数 **/</span>
 <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGetCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testGetCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 查询记录数</span>
     <span class="token comment" spellcheck="true">// SELECT COUNT( * ) FROM user</span>
     <span class="token keyword">long</span> count <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"总记录数 = "</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="d-gt-测试批量插入"><a href="#d-gt-测试批量插入" class="headerlink" title="d&gt;测试批量插入"></a>d&gt;测试批量插入</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 批量添加的功能 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testInsertMore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testInsertMore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// SQL长度有限制，海量数据插入单条SQL无法实行，</span>
     <span class="token comment" spellcheck="true">// 因此MP将批量插入放在了通用Service中实现，而不是通用Mapper</span>
     <span class="token comment" spellcheck="true">// 批量添加</span>
     <span class="token comment" spellcheck="true">// INSERT INTO user ( id, name, age ) VALUES ( ?, ?, ? )</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         user<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"lxg"</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
         user<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">20</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
         users<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">boolean</span> b <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">saveBatch</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h1 id="四、常用注解"><a href="#四、常用注解" class="headerlink" title="四、常用注解"></a>四、常用注解</h1><h2 id="1、-TableName"><a href="#1、-TableName" class="headerlink" title="1、@TableName"></a>1、@TableName</h2><p>经过以上的测试，在使用MyBatis-Plus实现基本的CRUD时，我们并没有指定要操作的表，只是在 </p>
 <p><strong>Mapper接口继承BaseMapper</strong>时，<strong>设置了泛型User，而操作的表为user表</strong> </p>
@@ -1180,7 +1180,7 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 </ul>
 <h2 id="2、QueryWrapper"><a href="#2、QueryWrapper" class="headerlink" title="2、QueryWrapper"></a>2、QueryWrapper</h2><h3 id="a-gt-例1：组装查询条件"><a href="#a-gt-例1：组装查询条件" class="headerlink" title="a&gt;例1：组装查询条件"></a>a&gt;例1：组装查询条件</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 查询用户包含a,年龄在20到30之间，邮箱信息不为null的用户信息 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 AND (user_name LIKE ?
@@ -1192,11 +1192,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
             <span class="token punctuation">.</span><span class="token function">isNotNull</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="b-gt-例2：组装排序条件"><a href="#b-gt-例2：组装排序条件" class="headerlink" title="b&gt;例2：组装排序条件"></a>b&gt;例2：组装排序条件</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 组装排序条件 查询用户信息，按照年龄的降序排序，若年龄相同，则按照id升序排序 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test02</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test02</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 ORDER BY age DESC,uid ASC
@@ -1206,11 +1206,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
             <span class="token punctuation">.</span><span class="token function">orderByAsc</span><span class="token punctuation">(</span><span class="token string">"uid"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-例3：组装删除条件"><a href="#c-gt-例3：组装删除条件" class="headerlink" title="c&gt;例3：组装删除条件"></a>c&gt;例3：组装删除条件</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 组装删除条件 删除邮箱地址为null的用户信息 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test03</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         UPDATE t_user SET is_deleted=1 WHERE is_deleted=0 AND (email IS NOT NULL)
      */</span>
@@ -1218,11 +1218,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     queryWrapper<span class="token punctuation">.</span><span class="token function">isNull</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="d-gt-例4：条件的优先级"><a href="#d-gt-例4：条件的优先级" class="headerlink" title="d&gt;例4：条件的优先级"></a>d&gt;例4：条件的优先级</h3><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">/** 组装修改条件  将(年龄大于20并且用户名中包含有a)或邮箱为null的用户信息修改 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test04</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test04</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         UPDATE t_user SET user_name=?, email=?
         WHERE is_deleted=0 AND (age > ? AND user_name LIKE ? OR email IS NOT NULL)
@@ -1237,11 +1237,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     user<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"test@atguigu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/** 条件优先级  将用户名中包含a并且(年龄大于20或邮箱为null)的用户信息修改 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test05</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test05</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// lambda中条件优先级</span>
     <span class="token comment" spellcheck="true">/*
         UPDATE t_user SET user_name=?, email=?
@@ -1255,11 +1255,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     user<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"test@atguigu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="e-gt-例5：组装select子句"><a href="#e-gt-例5：组装select子句" class="headerlink" title="e&gt;例5：组装select子句"></a>e&gt;例5：组装select子句</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 组装select字句 查询用户名的用户名、年龄、邮箱信息 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test06</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test06</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT user_name,age,email FROM t_user WHERE is_deleted=0
      */</span>
@@ -1267,11 +1267,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     queryWrapper<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"user_name"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectMaps</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="f-gt-例6：实现子查询"><a href="#f-gt-例6：实现子查询" class="headerlink" title="f&gt;例6：实现子查询"></a>f&gt;例6：实现子查询</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 组装子查询 查询id小于100的用户信息**/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test07</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test07</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 AND (uid IN (select uid from t_user where uid &lt;= 100))
@@ -1280,11 +1280,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     queryWrapper<span class="token punctuation">.</span><span class="token function">inSql</span><span class="token punctuation">(</span><span class="token string">"uid"</span><span class="token punctuation">,</span> <span class="token string">"select uid from t_user where uid &lt;= 100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="3、UpdateWrapper"><a href="#3、UpdateWrapper" class="headerlink" title="3、UpdateWrapper"></a>3、UpdateWrapper</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 使用UpdateWrapper实现修改功能 将用户名中包含a并且(年龄大于20或邮箱为null)的用户信息修改 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test08</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test08</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         UPDATE t_user SET user_name=?,email=?
         WHERE is_deleted=0 AND (user_name LIKE ? AND (age > ? OR email IS NULL))
@@ -1295,13 +1295,13 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     updateWrapper<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"user_name"</span><span class="token punctuation">,</span> <span class="token string">"小黑"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">,</span> <span class="token string">"abc@atguigu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="4、Condition"><a href="#4、Condition" class="headerlink" title="4、Condition"></a>4、Condition</h2><p>在真正开发的过程中，组装条件是常见的功能，<strong>而这些条件数据来源于用户输入，是可选的，因此我们在组装这些条件时，必须先判断用户是否选择了这些条件</strong>，若选择则需要组装该条件，若 </p>
 <p>没有选择则一定不能组装，以免影响SQL执行的结果</p>
 <h3 id="思路一："><a href="#思路一：" class="headerlink" title="思路一："></a>思路一：</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 模拟开发中组装条件的情况  **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test09</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test09</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 AND (user_name LIKE ? AND age &lt;= ?)
@@ -1310,24 +1310,24 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     Integer ageBegin <span class="token operator">=</span> null<span class="token punctuation">;</span>
     Integer ageEnd <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
     QueryWrapper<span class="token operator">&lt;</span>User<span class="token operator">></span> queryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isNotBlank</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isNotBlank</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// isNotBlank判断某个字符串是否不为空字符串、不为null、不为空白符</span>
         queryWrapper<span class="token punctuation">.</span><span class="token function">like</span><span class="token punctuation">(</span><span class="token string">"user_name"</span><span class="token punctuation">,</span> username<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ageBegin <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ageBegin <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         queryWrapper<span class="token punctuation">.</span><span class="token function">gt</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> ageBegin<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ageEnd <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ageEnd <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         queryWrapper<span class="token punctuation">.</span><span class="token function">le</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span> ageEnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="思路二："><a href="#思路二：" class="headerlink" title="思路二："></a>思路二：</h3><p>上面的实现方案没有问题，但是代码比较复杂，我们可以使用带condition参数的重载方法构建查询条件<strong>，****简化代码的编写</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** 使用condition组装条件 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test10</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test10</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 AND (user_name LIKE ? AND age &lt;= ?)
@@ -1341,11 +1341,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
             <span class="token punctuation">.</span><span class="token function">le</span><span class="token punctuation">(</span>ageEnd <span class="token operator">!=</span> null<span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">,</span> ageEnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="5、LambdaQueryWrapper"><a href="#5、LambdaQueryWrapper" class="headerlink" title="5、LambdaQueryWrapper"></a>5、LambdaQueryWrapper</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** LambdaQueryWrapper **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test11</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test11</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 AND (user_name LIKE ? AND age &lt;= ?)
@@ -1361,11 +1361,11 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
             <span class="token punctuation">.</span><span class="token function">le</span><span class="token punctuation">(</span>ageEnd <span class="token operator">!=</span> null<span class="token punctuation">,</span> User<span class="token operator">:</span><span class="token operator">:</span>getAge<span class="token punctuation">,</span> ageEnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
     List<span class="token operator">&lt;</span>User<span class="token operator">></span> list <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="6、LambdaUpdateWrapper"><a href="#6、LambdaUpdateWrapper" class="headerlink" title="6、LambdaUpdateWrapper"></a>6、LambdaUpdateWrapper</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/** LambdaUpdateWrapper **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test12</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test12</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         UPDATE t_user SET user_name=?,email=?
         WHERE is_deleted=0 AND (user_name LIKE ? AND (age > ? OR email IS NULL))
@@ -1377,35 +1377,35 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     updateWrapper<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>User<span class="token operator">:</span><span class="token operator">:</span>getName<span class="token punctuation">,</span> <span class="token string">"小黑"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>User<span class="token operator">:</span><span class="token operator">:</span>getEmail<span class="token punctuation">,</span> <span class="token string">"abc@atguigu.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h1 id="六、插件"><a href="#六、插件" class="headerlink" title="六、插件"></a>六、插件</h1><h2 id="1、分页插件"><a href="#1、分页插件" class="headerlink" title="1、分页插件"></a>1、分页插件</h2><p>MyBatis Plus自带分页插件，只要简单的配置即可实现分页功能</p>
 <h3 id="a-gt-添加配置类"><a href="#a-gt-添加配置类" class="headerlink" title="a&gt;添加配置类"></a>a&gt;添加配置类</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@MapperScan</span><span class="token punctuation">(</span><span class="token string">"scan.your.mapper.package"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisPlusConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisPlusConfig</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/**
      * 新的分页插件,一缓和二缓遵循mybatis的规则,需要设置 MybatisConfiguration#useDeprecatedExecutor = false 避免缓存出现问题(该属性会在旧插件移除后一同移除)
      */</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> MybatisPlusInterceptor <span class="token function">mybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> MybatisPlusInterceptor <span class="token function">mybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         MybatisPlusInterceptor interceptor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         interceptor<span class="token punctuation">.</span><span class="token function">addInnerInterceptor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">PaginationInnerInterceptor</span><span class="token punctuation">(</span>DbType<span class="token punctuation">.</span>H2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> interceptor<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ConfigurationCustomizer <span class="token function">configurationCustomizer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> ConfigurationCustomizer <span class="token function">configurationCustomizer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> configuration <span class="token operator">-</span><span class="token operator">></span> configuration<span class="token punctuation">.</span><span class="token function">setUseDeprecatedExecutor</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="b-gt-测试"><a href="#b-gt-测试" class="headerlink" title="b&gt;测试"></a>b&gt;测试</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
 <span class="token keyword">private</span> ProductMapper productMapper<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/** MyBatis-Plus分页插件的配置和使用和分页相关数据的获取 **/</span>
 <span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*
         SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user
         WHERE is_deleted=0 LIMIT ?
@@ -1417,10 +1417,10 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"总记录数"</span> <span class="token operator">+</span> page<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否有上一页"</span> <span class="token operator">+</span> page<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否有下一页:"</span> <span class="token operator">+</span> page<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>测试结果：</p>
-<p>[User(id=1, name=Jone, age=18, email=<a href="mailto:&#116;&#x65;&#x73;&#x74;&#x31;&#64;&#98;&#x61;&#x6f;&#x6d;&#105;&#x64;&#x6f;&#117;&#46;&#99;&#111;&#109;">&#116;&#x65;&#x73;&#x74;&#x31;&#64;&#98;&#x61;&#x6f;&#x6d;&#105;&#x64;&#x6f;&#117;&#46;&#99;&#111;&#109;</a>, sex=null, isDeleted=0), User(id=2, name=Jack, age=18, email=<a href="mailto:&#116;&#x65;&#115;&#116;&#x32;&#x40;&#x62;&#x61;&#111;&#x6d;&#105;&#100;&#111;&#117;&#46;&#x63;&#111;&#x6d;">&#116;&#x65;&#115;&#116;&#x32;&#x40;&#x62;&#x61;&#111;&#x6d;&#105;&#100;&#111;&#117;&#46;&#x63;&#111;&#x6d;</a>, sex=null, isDeleted=0), User(id=3, name=Tom, age=18, email=<a href="mailto:&#x74;&#101;&#x73;&#116;&#x33;&#64;&#98;&#x61;&#x6f;&#x6d;&#x69;&#100;&#x6f;&#117;&#x2e;&#99;&#111;&#x6d;">&#x74;&#101;&#x73;&#116;&#x33;&#64;&#98;&#x61;&#x6f;&#x6d;&#x69;&#100;&#x6f;&#117;&#x2e;&#99;&#111;&#x6d;</a>, sex=null, isDeleted=0)]</p>
+<p>[User(id=1, name=Jone, age=18, email=<a href="mailto:&#116;&#x65;&#x73;&#x74;&#x31;&#x40;&#x62;&#x61;&#x6f;&#x6d;&#105;&#100;&#x6f;&#x75;&#46;&#99;&#111;&#x6d;">&#116;&#x65;&#x73;&#x74;&#x31;&#x40;&#x62;&#x61;&#x6f;&#x6d;&#105;&#100;&#x6f;&#x75;&#46;&#99;&#111;&#x6d;</a>, sex=null, isDeleted=0), User(id=2, name=Jack, age=18, email=<a href="mailto:&#x74;&#101;&#x73;&#x74;&#x32;&#64;&#x62;&#x61;&#111;&#x6d;&#x69;&#x64;&#111;&#x75;&#46;&#99;&#x6f;&#x6d;">&#x74;&#101;&#x73;&#x74;&#x32;&#64;&#x62;&#x61;&#111;&#x6d;&#x69;&#x64;&#111;&#x75;&#46;&#99;&#x6f;&#x6d;</a>, sex=null, isDeleted=0), User(id=3, name=Tom, age=18, email=<a href="mailto:&#x74;&#101;&#115;&#116;&#51;&#64;&#98;&#97;&#111;&#x6d;&#105;&#x64;&#x6f;&#x75;&#46;&#x63;&#111;&#109;">&#x74;&#101;&#115;&#116;&#51;&#64;&#98;&#97;&#111;&#x6d;&#105;&#x64;&#x6f;&#x75;&#46;&#x63;&#111;&#109;</a>, sex=null, isDeleted=0)]</p>
 <p>总页数:3</p>
 <p>总记录数8</p>
 <p>是否有上一页true</p>
@@ -1434,11 +1434,11 @@ Page<span class="token operator">&lt;</span>User<span class="token operator">></
 </code></pre>
 <h3 id="b-gt-UserMapper-xml中编写SQL"><a href="#b-gt-UserMapper-xml中编写SQL" class="headerlink" title="b&gt;UserMapper.xml中编写SQL"></a>b&gt;UserMapper.xml中编写SQL</h3><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>Page<span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token function">selectPageVo</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">)</span> Page<span class="token operator">&lt;</span>User<span class="token operator">></span> page<span class="token punctuation">,</span> <span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">)</span> Integer age<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"selectPageVo"</span> resultType<span class="token operator">=</span><span class="token string">"User"</span><span class="token operator">></span>
-    select uid as `id`<span class="token punctuation">,</span>user_name as `name`<span class="token punctuation">,</span>age<span class="token punctuation">,</span>email from t_user where age <span class="token operator">></span> #<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>age<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    select uid as `id`<span class="token punctuation">,</span>user_name as `name`<span class="token punctuation">,</span>age<span class="token punctuation">,</span>email from t_user where age <span class="token operator">></span> #<span class="token punctuation">{</span>age<span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span>
 </code></pre>
 <h3 id="c-gt-测试"><a href="#c-gt-测试" class="headerlink" title="c&gt;测试"></a>c&gt;测试</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectPageVo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//设置分页参数</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectPageVo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//设置分页参数</span>
     Page<span class="token operator">&lt;</span>User<span class="token operator">></span> page <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Page</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     userMapper<span class="token punctuation">.</span><span class="token function">selectPageVo</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//获取分页数据</span>
@@ -1450,11 +1450,11 @@ Page<span class="token operator">&lt;</span>User<span class="token operator">></
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"总页数:"</span><span class="token operator">+</span>page<span class="token punctuation">.</span><span class="token function">getPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否有上一页:"</span><span class="token operator">+</span>page<span class="token punctuation">.</span><span class="token function">hasPrevious</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否有下一页:"</span><span class="token operator">+</span>page<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>User(id=3, name=Tom, age=28, email=<a href="mailto:&#116;&#x65;&#x73;&#116;&#51;&#x40;&#x62;&#97;&#x6f;&#109;&#x69;&#100;&#111;&#x75;&#46;&#99;&#x6f;&#109;">&#116;&#x65;&#x73;&#116;&#51;&#x40;&#x62;&#97;&#x6f;&#109;&#x69;&#100;&#111;&#x75;&#46;&#99;&#x6f;&#109;</a>, isDeleted=null) User(id=4, </p>
-<p>name=Sandy, age=21, email=<a href="mailto:&#x74;&#x65;&#x73;&#x74;&#x34;&#x40;&#98;&#x61;&#111;&#x6d;&#105;&#x64;&#x6f;&#x75;&#x2e;&#x63;&#x6f;&#x6d;">&#x74;&#x65;&#x73;&#x74;&#x34;&#x40;&#98;&#x61;&#111;&#x6d;&#105;&#x64;&#x6f;&#x75;&#x2e;&#x63;&#x6f;&#x6d;</a>, isDeleted=null) User(id=5, name=Billie, </p>
-<p>age=24, email=<a href="mailto:&#x74;&#101;&#x73;&#116;&#53;&#x40;&#98;&#97;&#x6f;&#x6d;&#105;&#100;&#111;&#x75;&#46;&#x63;&#x6f;&#x6d;">&#x74;&#101;&#x73;&#116;&#53;&#x40;&#98;&#97;&#x6f;&#x6d;&#105;&#100;&#111;&#x75;&#46;&#x63;&#x6f;&#x6d;</a>, isDeleted=null) User(id=8, name=ybc1, age=21, </p>
+<p>User(id=3, name=Tom, age=28, email=<a href="mailto:&#116;&#101;&#115;&#x74;&#51;&#x40;&#98;&#97;&#x6f;&#x6d;&#x69;&#100;&#x6f;&#x75;&#x2e;&#99;&#111;&#x6d;">&#116;&#101;&#115;&#x74;&#51;&#x40;&#98;&#97;&#x6f;&#x6d;&#x69;&#100;&#x6f;&#x75;&#x2e;&#99;&#111;&#x6d;</a>, isDeleted=null) User(id=4, </p>
+<p>name=Sandy, age=21, email=<a href="mailto:&#116;&#101;&#x73;&#116;&#x34;&#x40;&#x62;&#97;&#x6f;&#109;&#x69;&#100;&#111;&#117;&#46;&#99;&#111;&#x6d;">&#116;&#101;&#x73;&#116;&#x34;&#x40;&#x62;&#97;&#x6f;&#109;&#x69;&#100;&#111;&#117;&#46;&#99;&#111;&#x6d;</a>, isDeleted=null) User(id=5, name=Billie, </p>
+<p>age=24, email=<a href="mailto:&#x74;&#x65;&#115;&#x74;&#53;&#x40;&#98;&#97;&#111;&#109;&#105;&#x64;&#111;&#x75;&#x2e;&#99;&#x6f;&#x6d;">&#x74;&#x65;&#115;&#x74;&#53;&#x40;&#98;&#97;&#111;&#109;&#105;&#x64;&#111;&#x75;&#x2e;&#99;&#x6f;&#x6d;</a>, isDeleted=null) User(id=8, name=ybc1, age=21, </p>
 <p>email=null, isDeleted=null) User(id=9, name=ybc2, age=22, email=null, isDeleted=null) </p>
 <p>当前页：1 每页显示的条数：5 总记录数：12 总页数：3 是否有上一页：false 是否有下一页：true</p>
 <h2 id="3、乐观锁"><a href="#3、乐观锁" class="headerlink" title="3、乐观锁"></a>3、乐观锁</h2><h3 id="a-gt-场景"><a href="#a-gt-场景" class="headerlink" title="a&gt;场景"></a>a&gt;场景</h3><p>一件商品，成本价是80元，售价是100元。老板先是通知小李，说你去把商品价格增加50元。小 </p>
@@ -1483,20 +1483,20 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Data<span class="token punctuation">;</span>
 
 <span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Product</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Product</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer price<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer version<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="添加mapper"><a href="#添加mapper" class="headerlink" title="添加mapper"></a>添加mapper</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ProductMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>Product<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ProductMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>Product<span class="token operator">></span> <span class="token punctuation">{</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testProduct01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testProduct01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 1.小李查询商品价格</span>
     Product productLi <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小李查询的商品价格:"</span> <span class="token operator">+</span> productLi<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1516,7 +1516,7 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token comment" spellcheck="true">// 5.老板查询商品价格</span>
     Product productBoss <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"老板查询的商品价格:"</span> <span class="token operator">+</span> productBoss<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="d-gt-乐观锁实现流程"><a href="#d-gt-乐观锁实现流程" class="headerlink" title="d&gt;乐观锁实现流程"></a>d&gt;乐观锁实现流程</h3><p>数据库中<strong>添加version字段</strong></p>
 <p><strong>取出记录时，获取当前version</strong></p>
@@ -1527,7 +1527,7 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
 <span class="token punctuation">`</span>version<span class="token punctuation">`</span><span class="token operator">=</span><span class="token number">1</span>
 </code></pre>
 <h3 id="e-gt-MyBatis-Plus实现乐观锁"><a href="#e-gt-MyBatis-Plus实现乐观锁" class="headerlink" title="e&gt;MyBatis-Plus实现乐观锁"></a>e&gt;MyBatis-Plus实现乐观锁</h3><h4 id="修改实体类"><a href="#修改实体类" class="headerlink" title="修改实体类"></a>修改实体类</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Product</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Product</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
@@ -1535,25 +1535,25 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token annotation punctuation">@Version</span> <span class="token comment" spellcheck="true">// 设置乐观锁版本号字段</span>
     <span class="token keyword">private</span> Integer version<span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="添加乐观锁插件配置"><a href="#添加乐观锁插件配置" class="headerlink" title="添加乐观锁插件配置"></a>添加乐观锁插件配置</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token comment" spellcheck="true">// 扫描mapper接口所在的包</span>
 <span class="token annotation punctuation">@MapperScan</span><span class="token punctuation">(</span><span class="token string">"com.atguigu.mybatisplus.mapper"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">myBatisPlusConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">myBatisPlusConfig</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">/** 添加MyBatisPlus分页插件 **/</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> MybatisPlusInterceptor <span class="token function">mybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> MybatisPlusInterceptor <span class="token function">mybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         MybatisPlusInterceptor interceptor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MybatisPlusInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 添加分页插件</span>
         interceptor<span class="token punctuation">.</span><span class="token function">addInnerInterceptor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">PaginationInnerInterceptor</span><span class="token punctuation">(</span>DbType<span class="token punctuation">.</span>MYSQL<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 添加乐观锁插件</span>
         interceptor<span class="token punctuation">.</span><span class="token function">addInnerInterceptor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">OptimisticLockerInnerInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> interceptor<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="测试修改冲突"><a href="#测试修改冲突" class="headerlink" title="测试修改冲突"></a>测试修改冲突</h4><p>小李查询商品信息:</p>
 <p>SELECT id,name,price,version FROM t_product WHERE id=?</p>
@@ -1566,7 +1566,7 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
 <p>最终，小王修改失败，查询价格:150</p>
 <p>SELECT id,name,price,version FROM t_product WHERE id=?</p>
 <h4 id="优化流程"><a href="#优化流程" class="headerlink" title="优化流程"></a>优化流程</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testProduct01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testProduct01</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 1.小李查询商品价格</span>
     Product productLi <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小李查询的商品价格:"</span> <span class="token operator">+</span> productLi<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1582,22 +1582,22 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token comment" spellcheck="true">// 4.小王将商品价格-30</span>
     productWang<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span>productWang<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> result <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">updateById</span><span class="token punctuation">(</span>productWang<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 操作失败,重试</span>
         Product productNew <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         productNew<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span>productNew<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         productMapper<span class="token punctuation">.</span><span class="token function">updateById</span><span class="token punctuation">(</span>productNew<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">// 5.老板查询商品价格</span>
     Product productBoss <span class="token operator">=</span> productMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"老板查询的商品价格:"</span> <span class="token operator">+</span> productBoss<span class="token punctuation">.</span><span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h1 id="七、通过枚举"><a href="#七、通过枚举" class="headerlink" title="七、通过枚举"></a>七、通过枚举</h1><p>表中的有些<strong>字段值是固定的</strong>，例如性别(男或女)，此时我们可以使用MyBatis-Plus的通用枚举 来实现</p>
 <h2 id="a-gt-数据库表添加字段sex"><a href="#a-gt-数据库表添加字段sex" class="headerlink" title="a&gt;数据库表添加字段sex"></a>a&gt;数据库表添加字段sex</h2><p><img src="/2022/06/04/Mybatisplus/image18.png" alt="img"></p>
 <h3 id="b-gt-创建通过枚举类型"><a href="#b-gt-创建通过枚举类型" class="headerlink" title="b&gt;创建通过枚举类型"></a>b&gt;创建通过枚举类型</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Getter</span> <span class="token comment" spellcheck="true">// 因为枚举里面都是常量</span>
-<span class="token keyword">public</span> <span class="token keyword">enum</span> SexEnum <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> SexEnum <span class="token punctuation">{</span>
     <span class="token function">MALE</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token function">FEMALE</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"女"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1605,11 +1605,11 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token keyword">private</span> Integer sex<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String sexName<span class="token punctuation">;</span>
 
-    <span class="token function">SexEnum</span><span class="token punctuation">(</span>Integer sex<span class="token punctuation">,</span> String sexName<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">SexEnum</span><span class="token punctuation">(</span>Integer sex<span class="token punctuation">,</span> String sexName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>sexName <span class="token operator">=</span> sexName<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="c-gt-配置扫描通过枚举"><a href="#c-gt-配置扫描通过枚举" class="headerlink" title="c&gt;配置扫描通过枚举"></a>c&gt;配置扫描通过枚举</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 加入日志功能</span>
 <span class="token key atrule">mybatis-plus</span><span class="token punctuation">:</span>
@@ -1628,22 +1628,22 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
   <span class="token key atrule">type-enums-package</span><span class="token punctuation">:</span> com.atguigu.mybatisplus.enums
 </code></pre>
 <h3 id="d-gt-测试"><a href="#d-gt-测试" class="headerlink" title="d&gt;测试"></a>d&gt;测试</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyBatisPlusEnumTest</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyBatisPlusEnumTest</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Autowired</span>
     <span class="token keyword">private</span> UserMapper userMapper<span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         user<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         user<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">33</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         user<span class="token punctuation">.</span><span class="token function">setSex</span><span class="token punctuation">(</span>SexEnum<span class="token punctuation">.</span>MALE<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> result <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"result = "</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h1 id="-2"><a href="#-2" class="headerlink" title></a></h1><h1 id="八、代码生成器"><a href="#八、代码生成器" class="headerlink" title="八、代码生成器"></a>八、代码生成器</h1><h2 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.baomidou<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -1656,30 +1656,30 @@ VERSION <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.3.31<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<h2 id="2、快速生成"><a href="#2、快速生成" class="headerlink" title="2、快速生成"></a>2、快速生成</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FastAutoGeneratorTest</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h2 id="2、快速生成"><a href="#2、快速生成" class="headerlink" title="2、快速生成"></a>2、快速生成</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FastAutoGeneratorTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 设置我们需要创建在哪的路径</span>
         String path <span class="token operator">=</span> <span class="token string">"/Users/luxiaogen/Documents/RoadTo2w/Java/尚硅谷/MyBatisPlus-2022/demo"</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 这里我是mysql8 5版本可以换成 jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&amp;useSSL=false</span>
         FastAutoGenerator<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">"jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&amp;characterEncoding=utf-8&amp;useSSL=false"</span><span class="token punctuation">,</span> <span class="token string">"root"</span><span class="token punctuation">,</span> <span class="token string">"root"</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">globalConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">.</span><span class="token function">globalConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
                     builder<span class="token punctuation">.</span><span class="token function">author</span><span class="token punctuation">(</span><span class="token string">"atguigu"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置作者</span>
                     <span class="token comment" spellcheck="true">// .enableSwagger() // 开启 swagger 模式</span>
                     <span class="token punctuation">.</span><span class="token function">fileOverride</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 覆盖已生成文件</span>
                     <span class="token punctuation">.</span><span class="token function">outputDir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 指定输出目录</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">packageConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">packageConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
                     builder<span class="token punctuation">.</span><span class="token function">parent</span><span class="token punctuation">(</span><span class="token string">"com.atguigu"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置父包名</span>
                             <span class="token punctuation">.</span><span class="token function">moduleName</span><span class="token punctuation">(</span><span class="token string">"mybatisplus"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置父包模块名</span>
                             <span class="token punctuation">.</span><span class="token function">pathInfo</span><span class="token punctuation">(</span>Collections<span class="token punctuation">.</span><span class="token function">singletonMap</span><span class="token punctuation">(</span>OutputFile<span class="token punctuation">.</span>mapperXml<span class="token punctuation">,</span> path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 设置mapperXml生成路径</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-                <span class="token punctuation">.</span><span class="token function">strategyConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">strategyConfig</span><span class="token punctuation">(</span>builder <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
                     builder<span class="token punctuation">.</span><span class="token function">addInclude</span><span class="token punctuation">(</span><span class="token string">"t_user"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 设置需要生成的表名</span>
                             <span class="token punctuation">.</span><span class="token function">addTablePrefix</span><span class="token punctuation">(</span><span class="token string">"t_"</span><span class="token punctuation">,</span> <span class="token string">"c_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 设置过滤表前缀</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">templateEngine</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FreemarkerTemplateEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 使用Freemarker 引擎模板，默认的是Velocity引擎模板</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">templateEngine</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FreemarkerTemplateEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 使用Freemarker 引擎模板，默认的是Velocity引擎模板</span>
                 <span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>点击运行</p>
 <p><img src="/2022/06/04/Mybatisplus/image19.png" alt="img"></p>
@@ -1752,23 +1752,23 @@ version <span class="token keyword">INT</span><span class="token punctuation">(<
           <span class="token key atrule">username</span><span class="token punctuation">:</span> root
           <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">'root'</span>
 </code></pre>
-<h2 id="4、创建用户service"><a href="#4、创建用户service" class="headerlink" title="4、创建用户service"></a>4、创建用户service</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h2 id="4、创建用户service"><a href="#4、创建用户service" class="headerlink" title="4、创建用户service"></a>4、创建用户service</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 <span class="token annotation punctuation">@Service</span>
 <span class="token annotation punctuation">@DS</span><span class="token punctuation">(</span><span class="token string">"master"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 指定所操作的数据源</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>UserMapper<span class="token punctuation">,</span> User<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>UserMapper<span class="token punctuation">,</span> User<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="5、创建商品service"><a href="#5、创建商品service" class="headerlink" title="5、创建商品service"></a>5、创建商品service</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ProductService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>Product<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<h2 id="5、创建商品service"><a href="#5、创建商品service" class="headerlink" title="5、创建商品service"></a>5、创建商品service</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ProductService</span> <span class="token keyword">extends</span> <span class="token class-name">IService</span><span class="token operator">&lt;</span>Product<span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 <span class="token annotation punctuation">@Service</span>
 <span class="token annotation punctuation">@DS</span><span class="token punctuation">(</span><span class="token string">"slave_1"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 要操作的数据源</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProductServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>ProductMapper<span class="token punctuation">,</span> Product<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">ProductService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProductServiceImpl</span> <span class="token keyword">extends</span> <span class="token class-name">ServiceImpl</span><span class="token operator">&lt;</span>ProductMapper<span class="token punctuation">,</span> Product<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">ProductService</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="6、测试"><a href="#6、测试" class="headerlink" title="6、测试"></a>6、测试</h2><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>
-<span class="token keyword">class</span> <span class="token class-name">MybatisPlusDatasourceApplicationTests</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">MybatisPlusDatasourceApplicationTests</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Autowired</span>
     <span class="token keyword">private</span> UserService userService<span class="token punctuation">;</span>
@@ -1777,13 +1777,13 @@ version <span class="token keyword">INT</span><span class="token punctuation">(<
     <span class="token keyword">private</span> ProductService productService<span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 测试</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>userService<span class="token punctuation">.</span><span class="token function">getById</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>productService<span class="token punctuation">.</span><span class="token function">getById</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>结果: </p>
 <p>1、都能顺利获取对象，则测试成功</p>
