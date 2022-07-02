@@ -4,16 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="axios实现前端请求后台, Ghost">
-    <meta name="description" content="首先引入axios 
-目录必须为vue目录
-vue控制台输入
-npm i axios -S
-
-在vue文件夹的src下创建utils文件，导入request.js文件
-import axios from &#39;axios&#39;
-
-const req">
+    <meta name="keywords" content="JWT实现token, Ghost">
+    <meta name="description" content="Jwt全称是：json web token。它将用户信息加密到token里，服务器不保存任何用户信息。服务器通过使用保存的密钥验证token的正确性，只要正确即通过验证。
+优点简洁: 可以通过URL、POST参数或者在HTTP header">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +20,7 @@ const req">
 
     
 
-    <title>axios实现前端请求后台 | Ghost</title>
+    <title>JWT实现token | Ghost</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -317,12 +310,12 @@ const req">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">axios实现前端请求后台</h1>
+                    <h1 class="description center-align post-title">JWT实现token</h1>
                 </div>
             </div>
         </div>
@@ -438,8 +431,8 @@ const req">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/Java-web/">
+                                <span class="chip bg-color">Java web</span>
                             </a>
                         
                     </div>
@@ -454,7 +447,7 @@ const req">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-18
+                    2022-07-02
                 </div>
                 
 
@@ -475,65 +468,175 @@ const req">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>首先引入axios </p>
-<p>目录必须为vue目录</p>
-<p>vue控制台输入</p>
-<pre class=" language-vue"><code class="language-vue">npm i axios -S
+                <p>Jwt全称是：json web token。它将用户信息加密到token里，服务器不保存任何用户信息。服务器通过使用保存的密钥验证token的正确性，只要正确即通过验证。</p>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>简洁: 可以通过URL、POST参数或者在HTTP header发送，因为数据量小，传输速度也很快；<br>自包含：负载中可以包含用户所需要的信息，避免了多次查询数据库；<br>因为Token是以JSON加密的形式保存在客户端的，所以JWT是跨语言的，原则上任何web形式都支持；<br>不需要在服务端保存会话信息，特别适用于分布式微服务。</p>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><p>无法作废已颁布的令牌；<br>不易应对数据过期。</p>
+<p>一、Jwt消息构成</p>
+<h6 id="1-1-组成"><a href="#1-1-组成" class="headerlink" title="1.1 组成"></a>1.1 组成</h6><p>一个token分3部分，按顺序为</p>
+<p>头部（header)<br>载荷（payload)<br>签证（signature)<br>三部分之间用.号做分隔</p>
+<h6 id="1-2-header"><a href="#1-2-header" class="headerlink" title="1.2 header"></a>1.2 header</h6><p>Jwt的头部承载两部分信息：</p>
+<p>声明类型，这里是Jwt<br>声明加密的算法 通常直接使用 HMAC SHA256</p>
+<h6 id="1-3-playload"><a href="#1-3-playload" class="headerlink" title="1.3 playload"></a>1.3 playload</h6><p>载荷就是存放有效信息的地方。基本上填2种类型数据</p>
+<p>标准中注册的声明的数据；<br>自定义数据。<br>由这2部分内部做base64加密。</p>
+<p>标准中注册的声明 (建议但不强制使用)<br>iss: jwt签发者<br>sub: jwt所面向的用户<br>aud: 接收jwt的一方<br>exp: jwt的过期时间，这个过期时间必须要大于签发时间<br>nbf: 定义在什么时间之前，该jwt都是不可用的.<br>iat: jwt的签发时间<br>jti: jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击。<br>自定义数据:存放我们想放在token中存放的key-value值</p>
+<h6 id="1-4-signature"><a href="#1-4-signature" class="headerlink" title="1.4 signature"></a>1.4 signature</h6><p>Jwt的第三部分是一个签证信息，这个签证信息由三部分组成<br>base64加密后的header和base64加密后的payload连接组成的字符串，然后通过header中声明的加密方式进行加盐secret组合加密，然后就构成了Jwt的第三部分。</p>
+<h6 id="导入依赖："><a href="#导入依赖：" class="headerlink" title="导入依赖："></a>导入依赖：</h6><pre class=" language-xml"><code class="language-xml">        <span class="token comment" spellcheck="true">&lt;!--引入jwt--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.auth0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>java-jwt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.9.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<p>在vue文件夹的src下创建utils文件，导入request.js文件</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<h6 id="配置token工具（）"><a href="#配置token工具（）" class="headerlink" title="配置token工具（）"></a>配置token工具（）</h6><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>utils<span class="token punctuation">;</span>
 
-<span class="token keyword">const</span> request <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    baseURL<span class="token punctuation">:</span> <span class="token string">'http://localhost:9090'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// 注意！！ 这里是全局统一加上了 '/api' 前缀，也就是说所有接口都会加上'/api'前缀在，页面里面写接口的时候就不要加 '/api'了，否则会出现2个'/api'，类似 '/api/api/user'这样的报错，切记！！！</span>
-    timeout<span class="token punctuation">:</span> <span class="token number">5000</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true">// request 拦截器</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>date<span class="token punctuation">.</span>DateUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>util<span class="token punctuation">.</span>StrUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>JWT<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>algorithms<span class="token punctuation">.</span>Algorithm<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>service<span class="token punctuation">.</span>UserService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Component<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>context<span class="token punctuation">.</span>request<span class="token punctuation">.</span>RequestContextHolder<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>context<span class="token punctuation">.</span>request<span class="token punctuation">.</span>ServletRequestAttributes<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>PostConstruct<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Resource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TokenUtils</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> UserService staticuserservice<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> UserService userService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@PostConstruct</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        staticuserservice<span class="token operator">=</span>userService<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//生成token</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> String <span class="token function">genToken</span><span class="token punctuation">(</span>String userId<span class="token punctuation">,</span> String sign<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> JWT<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withAudience</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//将userid保存到token里面作为载荷</span>
+                <span class="token punctuation">.</span><span class="token function">withExpiresAt</span><span class="token punctuation">(</span>DateUtil<span class="token punctuation">.</span><span class="token function">offsetHour</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">// 2小时后token过期</span>
+                <span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>Algorithm<span class="token punctuation">.</span><span class="token function">HMAC256</span><span class="token punctuation">(</span>sign<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 以password 作为token密钥</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//获取当前用户对象</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> User <span class="token function">getCurrentUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        HttpServletRequest request<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ServletRequestAttributes<span class="token punctuation">)</span> RequestContextHolder<span class="token punctuation">.</span><span class="token function">getRequestAttributes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String token<span class="token operator">=</span>request<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>StrUtil<span class="token punctuation">.</span><span class="token function">isNotBlank</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">try</span><span class="token punctuation">{</span>
+                String userId<span class="token operator">=</span>JWT<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAudience</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> staticuserservice<span class="token punctuation">.</span><span class="token function">getById</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="配置拦截器验证token"><a href="#配置拦截器验证token" class="headerlink" title="配置拦截器验证token"></a>配置拦截器验证token</h6><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>config<span class="token punctuation">.</span>interceptor<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>hutool<span class="token punctuation">.</span>core<span class="token punctuation">.</span>util<span class="token punctuation">.</span>StrUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>JWT<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>JWTVerifier<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>algorithms<span class="token punctuation">.</span>Algorithm<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>JWTDecodeException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>auth0<span class="token punctuation">.</span>jwt<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>JWTVerificationException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>common<span class="token punctuation">.</span>Constants<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>ServiceException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>service<span class="token punctuation">.</span>UserService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>method<span class="token punctuation">.</span>HandlerMethod<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>HandlerInterceptor<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JwtInterceptor</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerInterceptor</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> UserService userService<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">preHandle</span><span class="token punctuation">(</span>HttpServletRequest httpServletRequest<span class="token punctuation">,</span> HttpServletResponse httpServletResponse<span class="token punctuation">,</span> Object handler<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        String token<span class="token operator">=</span>httpServletRequest<span class="token punctuation">.</span><span class="token function">getHeader</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//如果不是映射方法直接通过</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>handler <span class="token keyword">instanceof</span> <span class="token class-name">HandlerMethod</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//执行认证</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>StrUtil<span class="token punctuation">.</span><span class="token function">isBlank</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ServiceException</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>CODE_401<span class="token punctuation">,</span><span class="token string">"无token，请重新登录"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//解析</span>
+        String userId<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            userId<span class="token operator">=</span> JWT<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAudience</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">JWTDecodeException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ServiceException</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>CODE_401<span class="token punctuation">,</span><span class="token string">"token验证失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        User user<span class="token operator">=</span>userService<span class="token punctuation">.</span><span class="token function">getById</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>user<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ServiceException</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>CODE_401<span class="token punctuation">,</span><span class="token string">"用户不存在"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">//用户密码加签验证token</span>
+        JWTVerifier jwtVerifier<span class="token operator">=</span>JWT<span class="token punctuation">.</span><span class="token function">require</span><span class="token punctuation">(</span>Algorithm<span class="token punctuation">.</span><span class="token function">HMAC256</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            jwtVerifier<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//验证token</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">JWTVerificationException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ServiceException</span><span class="token punctuation">(</span>Constants<span class="token punctuation">.</span>CODE_401<span class="token punctuation">,</span><span class="token string">"token验证失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="注册拦截器，以及拦截器配置"><a href="#注册拦截器，以及拦截器配置" class="headerlink" title="注册拦截器，以及拦截器配置"></a>注册拦截器，以及拦截器配置</h6><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>spring<span class="token punctuation">.</span>config<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span>JwtInterceptor<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>InterceptorRegistry<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebMvcConfigurer<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InterceptorConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addInterceptors</span><span class="token punctuation">(</span>InterceptorRegistry registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        registry<span class="token punctuation">.</span><span class="token function">addInterceptor</span><span class="token punctuation">(</span><span class="token function">jwtInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addPathPatterns</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token operator">/</span>拦截所有请求
+                <span class="token punctuation">.</span><span class="token function">excludePathPatterns</span><span class="token punctuation">(</span><span class="token string">"/user/login"</span><span class="token punctuation">,</span><span class="token string">"/user/register"</span><span class="token punctuation">,</span><span class="token string">"/**/export"</span><span class="token punctuation">,</span><span class="token string">"/**/im"</span><span class="token punctuation">,</span><span class="token string">"/file/**"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> JwtInterceptor <span class="token function">jwtInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">JwtInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="前端在发送请求时，应加入token发送到后台验证"><a href="#前端在发送请求时，应加入token发送到后台验证" class="headerlink" title="前端在发送请求时，应加入token发送到后台验证"></a>前端在发送请求时，应加入token发送到后台验证</h6><p>此处为在axios的配置文件中</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// request 拦截器</span>
 <span class="token comment" spellcheck="true">// 可以自请求发送前对请求做一些处理</span>
 <span class="token comment" spellcheck="true">// 比如统一加token，对请求参数统一加密</span>
 request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>config <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/json;charset=utf-8'</span><span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">// config.headers['token'] = user.token;  // 设置请求头</span>
+    <span class="token comment" spellcheck="true">//如果用户没有登录，就没有token</span>
+    <span class="token keyword">let</span> user<span class="token operator">=</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span> <span class="token operator">?</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        config<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'token'</span><span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">.</span>token<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 设置请求头</span>
+    <span class="token punctuation">}</span>
+
     <span class="token keyword">return</span> config
 <span class="token punctuation">}</span><span class="token punctuation">,</span> error <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// response 拦截器</span>
-<span class="token comment" spellcheck="true">// 可以在接口响应后统一处理结果</span>
-request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
-    response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> res <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// 如果是返回的文件</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>config<span class="token punctuation">.</span>responseType <span class="token operator">===</span> <span class="token string">'blob'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> res
-        <span class="token punctuation">}</span>
-        <span class="token comment" spellcheck="true">// 兼容服务端返回的字符串数据</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> res <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            res <span class="token operator">=</span> res <span class="token operator">?</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">:</span> res
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    error <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'err'</span> <span class="token operator">+</span> error<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// for debug</span>
-        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">)</span>
-
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> request
-
 </code></pre>
-<p>在main.js中引用</p>
-<p><code>Vue.prototype.request=request</code></p>
-<p>前端直接使用 <code>this.request.请求方式(&quot;请求地址&quot;).then(res=&gt;&#123; 操作&#125;)</code></p>
-<p>其中res为后台返回（return）的数据</p>
-<p>演示：</p>
-<p><img src="/2022/06/18/axios/1.png"></p>
-<p>传递参数：</p>
-<p><img src="/2022/06/18/axios/2.png"></p>
-<p><img src="/2022/06/18/axios/3.png"></p>
 
                 
             </div>
@@ -560,7 +663,7 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/06/18/axios/">http://example.com/2022/06/18/axios/</a>
+                    <a href="http://example.com/2022/07/02/token%E9%85%8D%E7%BD%AE/">http://example.com/2022/07/02/token%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,8 +701,8 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/Java-web/">
+                                    <span class="chip bg-color">Java web</span>
                                 </a>
                             
                         </div>
@@ -773,9 +876,10 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/07/02/token%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
@@ -793,9 +897,9 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -804,6 +908,7 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -822,13 +927,13 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/18/%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/">
+                <a href="/2022/06/18/axios/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Springboot导入导出">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="axios实现前端请求后台">
                         
-                        <span class="card-title">Springboot导入导出</span>
+                        <span class="card-title">axios实现前端请求后台</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -852,8 +957,8 @@ request<span class="token punctuation">.</span>interceptors<span class="token pu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java-web/">
-                        <span class="chip bg-color">Java web</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
